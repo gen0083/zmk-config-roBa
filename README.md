@@ -81,3 +81,8 @@ https://zmk.dev/docs/config/behaviors
 
 この設定ではHold and Tapの動作をカスタマイズする設定。
 Hold時には&mo(レイヤーを押している間だけ有効化する)、タップ時にはデフォルトレイヤーに戻しつつ指定のキーを押すという動作になる。
+
+### config/west.yml
+
+Zephyrの依存リポジトリを指定するファイル
+ZephyrはZMKのOSに相当するもの
