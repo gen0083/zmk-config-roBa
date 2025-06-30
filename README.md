@@ -34,6 +34,23 @@ keymap-drawerは触らない（GitHub Actionsによって生成されコミッ�
 
 roBa.keymapの設定について
 
+### combos
+
+複数のキーを同時に押した際の挙動を変更する設定。
+
+```
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <11 12>;
+        };
+```
+
+キーの11と12を同時に押すとTABを入力されたとして扱う機能。
+どのキーが該当するかは/config/roBa.jsonを参照するしかないっぽい？（最初に定義されているものから0インデックで指定）
+
+キーの数は2つである必要はなく、3つでもよいし、別に横並びで並んでいる必要もない。
+デフォルトでは50ミリ秒以内に押されたキーはcombosとして扱うことになっている。
+
 ### macro
 
 https://zmk.dev/docs/keymaps/behaviors/macros
