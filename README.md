@@ -24,9 +24,12 @@ config/roBa.keymapで設定
 
 https://zmk.dev/docs/config
 
+キーコード
+https://zmk.dev/docs/keymaps/list-of-keycodes
+
 ### その他の設定
 
-config/boards/shields/Test以下のファイルを設定変更
+boards/shields/roBa以下のファイルを設定変更
 
 keymap-drawerは触らない（GitHub Actionsによって生成されコミットが行われる）
 
