@@ -11,14 +11,6 @@
     quick-tap-ms = <0>;
 };
 
-&trackball {
-    input-processors = <&zip_temp_layer MOUSE_LAYER 10000>;
-    scroller {
-        layers = <5>;
-        input-processors = <&zip_xy_to_scroll_mapper>;
-    };
-};
-
 &mkp_input_listener {
     input-processors = <&zip_temp_layer MOUSE_LAYER 10000>;
 };
@@ -37,6 +29,13 @@
     >;
     require-prior-idle-ms = <200>;
 }
+
+&trackball {
+    scroller {
+        layers = <SCROLL_LAYER>;
+        input-processors = <&zip_xy_to_scroll_mapper>;
+    };
+};
 
 / {
     macros {
