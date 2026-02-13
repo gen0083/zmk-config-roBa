@@ -30,7 +30,7 @@
     require-prior-idle-ms = <200>;
 }
 
-&trackball {
+&trackball_listener {
     scroller {
         layers = <SCROLL_LAYER>;
         input-processors = <&zip_xy_to_scroll_mapper>;
