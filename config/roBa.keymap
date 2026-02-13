@@ -31,10 +31,7 @@
 }
 
 &trackball_listener {
-    scroller {
-        layers = <SCROLL_LAYER>;
-        input-processors = <&zip_xy_to_scroll_mapper>;
-    };
+    input-processors = <&zip_temp_layer MOUSE_LAYER 10000>;
 };
 
 / {
