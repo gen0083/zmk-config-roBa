@@ -28,7 +28,7 @@
         37 // Shift
     >;
     require-prior-idle-ms = <200>;
-}
+};
 
 &trackball_listener {
     input-processors = <&zip_temp_layer MOUSE_LAYER 10000>;
