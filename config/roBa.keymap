@@ -13,6 +13,10 @@
 
 &mkp_input_listener {
     input-processors = <&zip_temp_layer MOUSE_LAYER 10000>;
+    scroller {
+        layers = <SCROLL_LAYER>;
+        input-processors = <&zip_xy_to_scroll_mapper>;
+    };
 };
 
 &zip_temp_layer {
@@ -20,6 +24,7 @@
         7  // 中クリック
         18 // クリック
         19 // 右クリック
+        20 // スクロール
         21 // 進む
         33 // 戻る
         34 // Ctrl
@@ -233,10 +238,10 @@
 
         mouse {
             bindings = <
-&trans     &trans     &trans     &trans     &trans                      &trans  &trans    &mkp MB3  &trans          &trans
-&kp TAB    &trans     &trans     &trans     &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB2  &msc SCRL_DOWN  &mkp MB4
-&trans     &trans     &trans     &trans     &trans  &trans      &trans  &trans  &trans    &trans    &msc SCRL_UP  &mkp MB5
-&kp LCTRL  &kp LALT   &kp LGUI   &kp LSHIFT &trans  &trans      &trans  &trans                                      &trans
+&trans     &trans     &trans     &trans     &trans                      &trans  &trans    &mkp MB3  &trans            &trans
+&kp TAB    &trans     &trans     &trans     &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB2  &mo SCROLL_LAYER  &mkp MB4
+&trans     &trans     &trans     &trans     &trans  &trans      &trans  &trans  &trans    &trans    &msc SCRL_UP      &mkp MB5
+&kp LCTRL  &kp LALT   &kp LGUI   &kp LSHIFT &trans  &trans      &trans  &trans                                        &trans
             >;
         };
 
