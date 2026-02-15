@@ -11,14 +11,6 @@
     quick-tap-ms = <0>;
 };
 
-&mkp_input_listener {
-    input-processors = <&zip_temp_layer MOUSE_LAYER 10000>;
-    scroller {
-        layers = <SCROLL_LAYER>;
-        input-processors = <&zip_xy_to_scroll_mapper>;
-    };
-};
-
 &zip_temp_layer {
     excluded-positions = <
         7  // 中クリック
@@ -37,6 +29,10 @@
 
 &trackball_listener {
     input-processors = <&zip_temp_layer MOUSE_LAYER 10000>;
+    scroller {
+        layers = <SCROLL_LAYER>;
+        input-processors = <&zip_xy_to_scroll_mapper>;
+    };
 };
 
 / {
