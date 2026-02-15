@@ -34,7 +34,7 @@
         layers = <SCROLL_LAYER>;
         input-processors = <
             &zip_xy_to_scroll_mapper
-            &zip_scroll_scaler 1 3 // スクロール量を1/3に低減
+            &zip_scroll_scaler 1 16 // スクロール量を低減(分子 分母)
             &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT // Y方向のスクロール向きを逆転
         >;
     };
