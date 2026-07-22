@@ -270,9 +270,9 @@
 
         functions {
             bindings = <
-&kp F1  &kp F2         &kp F3         &kp F4         &kp F5                            &kp F6    &kp F7    &kp F8   &kp F9  &kp F10
-&trans  &trans         &kp LS(TAB)    &kp TAB        &kp F10     &trans      &trans    &trans    &trans    &trans   &trans  &trans
-&trans  &kp LS(LG(3))  &kp LS(LG(4))  &kp LS(LG(F))  &kp LA(F4)  &trans      &trans    &trans    &trans    &trans   &trans  &trans
+&kp F1  &kp F2         &kp F3         &kp F4         &kp F5                            &kp F6    &kp F7         &kp F8      &kp F9       &kp F10
+&trans  &trans         &kp LS(TAB)    &kp TAB        &kp F10     &trans      &trans    &trans    &kp LG(F11)    &kp LG(F12) &kp LG(F13)  &kp LA(LG(F13))
+&trans  &kp LS(LG(3))  &kp LS(LG(4))  &kp LS(LG(F))  &kp LA(F4)  &trans      &trans    &trans    &kp LA(F11)    &trans      &trans       &trans
 &trans  &trans         &trans         &trans         &trans      &trans      &trans    &trans                               &trans
             >;
         };
