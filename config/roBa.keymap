@@ -12,6 +12,10 @@
     quick-tap-ms = <0>;
 };
 
+&lt {
+    quick-tap-ms = <200>;
+};
+
 &zip_temp_layer {
     excluded-positions = <
         7  // 中クリック
