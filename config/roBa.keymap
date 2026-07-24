@@ -197,6 +197,29 @@
             #binding-cells = <2>;
             tapping-term-ms = <100>;
         };
+
+        // modが押されているときはキー入力のみの動作にする
+        lt_f: lt_f {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LT_F";
+            bindings = <&lt 3 F>, <&kp F>;
+            mods = <(MOD_LSFT|MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+            keep-mods = <(MOD_LSFT|MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+        };
+        lt_j: lt_j {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LT_J";
+            bindings = <&lt 6 J>, <&kp J>;
+            mods = <(MOD_LSFT|MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+            keep-mods = <(MOD_LSFT|MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+        };
+        lt_l: lt_l {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LT_L";
+            bindings = <&lt 5 L>, <&kp L>;
+            mods = <(MOD_LSFT|MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+            keep-mods = <(MOD_LSFT|MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+        };
     };
 
     keymap {
@@ -205,7 +228,7 @@
         default_layer {
             bindings = <
 &kp Q        &kp W       &kp E      &kp R       &kp T                                                 &kp Y        &kp U    &kp I      &kp O    &kp P
-&kp A        &kp S       &kp D      &lt 3 F     &kp G       &kp LS(LG(S))              &kp MINUS      &kp H        &lt 6 J  &kp K      &lt 5 L  &kp DQT
+&kp A        &kp S       &kp D      &lt_f       &kp G       &kp LS(LG(S))              &kp MINUS      &kp H        &lt_j  &kp K      &lt_l  &kp DQT
 &kp Z        &kp X       &kp C      &kp V       &kp B       &kp COLON                  &kp SEMICOLON  &kp N        &kp M    &kp COMMA  &kp DOT  &kp SLASH
 &kp LCTRL    &kp LALT    &kp LGUI   &kp LSHIFT  &lt 1 BSPC  &lt 2 MINUS                &kp ENTER      &lt 7 SPACE                               &kp UNDER
             >;
