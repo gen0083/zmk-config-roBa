@@ -202,6 +202,7 @@
         lt_f: lt_f {
             compatible = "zmk,behavior-mod-morph";
             label = "LT_F";
+            #binding-cells = <0>;
             bindings = <&lt 3 F>, <&kp F>;
             mods = <(MOD_LSFT|MOD_LCTL|MOD_LALT|MOD_LGUI)>;
             keep-mods = <(MOD_LSFT|MOD_LCTL|MOD_LALT|MOD_LGUI)>;
@@ -209,6 +210,7 @@
         lt_j: lt_j {
             compatible = "zmk,behavior-mod-morph";
             label = "LT_J";
+            #binding-cells = <0>;
             bindings = <&lt 6 J>, <&kp J>;
             mods = <(MOD_LSFT|MOD_LCTL|MOD_LALT|MOD_LGUI)>;
             keep-mods = <(MOD_LSFT|MOD_LCTL|MOD_LALT|MOD_LGUI)>;
@@ -216,6 +218,7 @@
         lt_l: lt_l {
             compatible = "zmk,behavior-mod-morph";
             label = "LT_L";
+            #binding-cells = <0>;
             bindings = <&lt 5 L>, <&kp L>;
             mods = <(MOD_LSFT|MOD_LCTL|MOD_LALT|MOD_LGUI)>;
             keep-mods = <(MOD_LSFT|MOD_LCTL|MOD_LALT|MOD_LGUI)>;
