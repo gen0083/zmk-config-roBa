@@ -14,7 +14,8 @@
 
 &lt {
     quick-tap-ms = <200>;
-    tapping-term-ms = <130>;
+    tapping-term-ms = <200>;
+    flavor = "tap-preferred";
 };
 
 // exclude-positions確認用
@@ -138,6 +139,16 @@
             release-after-ms = <250>;
         };
 
+        lt_quick: lt_quick {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_QUICK";
+            bindings = <&mo>, <&kp>;
+            #binding-cells = <2>;
+            tapping-term-ms = <130>; // 特定のレイヤー用の長い判定時間
+            quick-tap-ms = <200>;
+            flavor = "tap-preferred";
+        };
+
         tog_off: toggle_layer_off {
             compatible = "zmk,behavior-toggle-layer";
             #binding-cells = <1>;
@@ -231,9 +242,9 @@
         default_layer {
             bindings = <
 &kp Q        &kp W       &kp E      &kp R       &kp T                                                 &kp Y        &kp U    &kp I      &kp O    &kp P
-&kp A        &kp S       &kp D      &lt_f       &kp G       &kp LS(LG(S))              &kp MINUS      &kp H        &lt_j  &kp K      &lt_l  &kp DQT
-&kp Z        &kp X       &kp C      &kp V       &kp B       &kp COLON                  &kp SEMICOLON  &kp N        &kp M    &kp COMMA  &kp DOT  &kp SLASH
-&kp LCTRL    &kp LALT    &kp LGUI   &kp LSHIFT  &lt 1 BSPC  &lt 2 MINUS                &kp ENTER      &lt 7 SPACE                               &kp UNDER
+&kp A        &kp S       &kp D      &lt_f       &kp G             &kp LS(LG(S))              &kp MINUS      &kp H        &lt_j  &kp K      &lt_l  &kp DQT
+&kp Z        &kp X       &kp C      &kp V       &kp B             &kp COLON                  &kp SEMICOLON  &kp N        &kp M    &kp COMMA  &kp DOT  &kp SLASH
+&kp LCTRL    &kp LALT    &kp LGUI   &kp LSHIFT  &lt_quick 1 BSPC  &lt 2 MINUS                &kp ENTER      &lt 7 SPACE                               &kp UNDER
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
