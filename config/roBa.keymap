@@ -234,6 +234,15 @@
             mods = <(MOD_LSFT|MOD_LCTL|MOD_LALT|MOD_LGUI)>;
             keep-mods = <(MOD_LSFT|MOD_LCTL|MOD_LALT|MOD_LGUI)>;
         };
+        // マウスレイヤーのキー入力とマウスボタンを両立させる
+        ml_clk: mouse_layer_click {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MOUSE_LAYER_CLICK";
+            bindings = <&mkp>, <&kp>;
+            #binding-cells = <2>;
+            tapping-term-ms = <100>; // ごく短い長押し判定でクリック
+            flavor = "tap-preferred";
+        };
     };
 
     keymap {
@@ -281,10 +290,10 @@
 
         mouse {
             bindings = <
-&exit_AML  &trans     &trans     &trans     &trans                      &trans  &trans    &trans    &trans            &trans
-&kp TAB    &trans     &trans     &trans     &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB2  &mo SCROLL_LAYER  &mkp MB4
-&trans     &trans     &trans     &trans     &trans  &trans      &trans  &trans  &trans    &trans    &mo SCROLL_LAYER  &mkp MB5
-&kp LCTRL  &kp LALT   &kp LGUI   &kp LSHIFT &trans  &trans      &trans  &trans                                        &trans
+&exit_AML  &trans     &trans     &trans     &trans                      &trans  &trans         &trans         &trans            &trans
+&kp TAB    &trans     &trans     &trans     &trans  &trans      &trans  &trans  &ml_clk MB1 J  &ml_clk MB2 K  &mo SCROLL_LAYER  &mkp MB4
+&trans     &trans     &trans     &trans     &trans  &trans      &trans  &trans  &trans         &trans         &mo SCROLL_LAYER  &mkp MB5
+&kp LCTRL  &kp LALT   &kp LGUI   &kp LSHIFT &trans  &trans      &trans  &trans                                                  &trans
             >;
         };
 
