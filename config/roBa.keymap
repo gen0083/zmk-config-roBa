@@ -238,7 +238,7 @@
         ml_clk: mouse_layer_click {
             compatible = "zmk,behavior-hold-tap";
             label = "MOUSE_LAYER_CLICK";
-            bindings = <&mkp>, <&kp>;
+            bindings = <&mkp>, <&kp_exit_AML>;
             #binding-cells = <2>;
             tapping-term-ms = <100>; // ごく短い長押し判定でクリック
             flavor = "tap-preferred";
