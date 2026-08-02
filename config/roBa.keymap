@@ -235,13 +235,22 @@
             keep-mods = <(MOD_LSFT|MOD_LCTL|MOD_LALT|MOD_LGUI)>;
         };
         // マウスレイヤーのキー入力とマウスボタンを両立させる
-        ml_clk: mouse_layer_click {
+        ml_r: mouse_layer_click {
             compatible = "zmk,behavior-hold-tap";
             label = "MOUSE_LAYER_CLICK";
             bindings = <&mkp>, <&kp_exit_AML>;
             #binding-cells = <2>;
             tapping-term-ms = <100>; // ごく短い長押し判定でクリック
             flavor = "tap-preferred";
+        };
+        ml_l: mouse_layer_click_left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MOUSE_LAYER_CLICK_LEFT";
+            bindings = <&mkp>, <&kp_exit_AML>;
+            #binding-cells = <2>;
+            // 左クリックとJはJ判定される時間をごく短く設定（左クリックがJに化ける問題が多くなるのを防ぐため）
+            tapping-term-ms = <80>;
+            flavor = "hold-preferred";        
         };
     };
 
@@ -290,9 +299,9 @@
 
         mouse {
             bindings = <
-&exit_AML  &trans     &trans     &trans     &trans                      &trans  &trans         &trans         &trans            &trans
-&kp TAB    &trans     &trans     &trans     &trans  &trans      &trans  &trans  &ml_clk MB1 J  &ml_clk MB2 K  &mo SCROLL_LAYER  &mkp MB4
-&trans     &trans     &trans     &trans     &trans  &trans      &trans  &trans  &trans         &trans         &mo SCROLL_LAYER  &mkp MB5
+&exit_AML  &trans     &trans     &trans     &trans                      &trans  &trans       &trans       &trans            &trans
+&kp TAB    &trans     &trans     &trans     &trans  &trans      &trans  &trans  &ml_l MB1 J  &ml_r MB2 K  &mo SCROLL_LAYER  &mkp MB4
+&trans     &trans     &trans     &trans     &trans  &trans      &trans  &trans  &trans       &trans       &mo SCROLL_LAYER  &mkp MB5
 &kp LCTRL  &kp LALT   &kp LGUI   &kp LSHIFT &trans  &trans      &trans  &trans                                                  &trans
             >;
         };
