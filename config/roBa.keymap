@@ -15,7 +15,7 @@
 &lt {
     quick-tap-ms = <200>;
     tapping-term-ms = <200>;
-    flavor = "tap-preferred";
+    flavor = "hold-preferred";
 };
 
 // exclude-positions確認用
@@ -146,7 +146,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <130>; // 特定のレイヤー用の長い判定時間
             quick-tap-ms = <200>;
-            flavor = "tap-preferred";
+            flavor = "hold-preferred";
         };
 
         tog_off: toggle_layer_off {
