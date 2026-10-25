@@ -250,7 +250,7 @@
             #binding-cells = <2>;
             // 左クリックとJはJ判定される時間をごく短く設定（左クリックがJに化ける問題が多くなるのを防ぐため）
             tapping-term-ms = <80>;
-            flavor = "hold-preferred";        
+            flavor = "tap-preferred";        
         };
     };
 
