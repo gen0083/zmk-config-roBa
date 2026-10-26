@@ -235,7 +235,7 @@
             keep-mods = <(MOD_LSFT|MOD_LCTL|MOD_LALT|MOD_LGUI)>;
         };
         // マウスレイヤーのキー入力とマウスボタンを両立させる
-        ml_r: mouse_layer_click {
+        ml_c: mouse_layer_click {
             compatible = "zmk,behavior-hold-tap";
             label = "MOUSE_LAYER_CLICK";
             bindings = <&mkp>, <&kp_exit_AML>;
@@ -243,7 +243,15 @@
             tapping-term-ms = <100>; // ごく短い長押し判定でクリック
             flavor = "tap-preferred";
         };
-        ml_l: mouse_layer_click_left {
+        ml_sc: mouse_layer_scroll {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MOUSE_LAYER_SCROLL";
+            bindings = <&mo>, <&kp_exit_AML>;
+            #binding-cells = <2>;
+            tapping-term-ms = <100>; // ごく短い長押し判定でクリック
+            flavor = "tap-preferred";
+        };
+        ml_l: mouse_layer_click_lapid {
             compatible = "zmk,behavior-hold-tap";
             label = "MOUSE_LAYER_CLICK_LEFT";
             bindings = <&mkp>, <&kp_exit_AML>;
@@ -299,10 +307,10 @@
 
         mouse {
             bindings = <
-&exit_AML  &trans     &trans     &trans     &trans                      &trans  &trans       &trans       &trans            &trans
-&kp TAB    &trans     &trans     &trans     &trans  &trans      &trans  &trans  &ml_l MB1 J  &ml_r MB2 K  &mo SCROLL_LAYER  &mkp MB4
-&trans     &trans     &trans     &trans     &trans  &trans      &trans  &trans  &trans       &trans       &mo SCROLL_LAYER  &mkp MB5
-&kp LCTRL  &kp LALT   &kp LGUI   &kp LSHIFT &trans  &trans      &trans  &trans                                                  &trans
+&exit_AML  &trans     &trans     &trans     &trans                      &trans  &trans       &trans       &trans                  &trans
+&kp TAB    &trans     &trans     &trans     &trans  &trans      &trans  &trans  &ml_l MB1 J  &ml_c MB2 K  &ml_sc SCROLL_LAYER L   &ml_c MB4 DQT
+&trans     &trans     &trans     &trans     &trans  &trans      &trans  &trans  &trans       &trans       &ml_sc SCROLL_LAYER DOT &ml_c MB5 SLASH
+&kp LCTRL  &kp LALT   &kp LGUI   &kp LSHIFT &trans  &trans      &trans  &trans                                                    &trans
             >;
         };
 
