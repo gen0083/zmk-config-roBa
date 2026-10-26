@@ -131,6 +131,16 @@
     };
 
     behaviors {
+        tlt: tap_preferred_lt {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAP_PREFERRED_LT";
+            #binding-cells = <2>;
+            bindings = <&mo>, <&kp>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <140>;
+            quick-tap-ms = <200>;
+        };
+
         sl_250: sl_250 {
             compatible = "zmk,behavior-sticky-key";
             label = "SL_250";
@@ -210,11 +220,12 @@
         };
 
         // modが押されているときはキー入力のみの動作にする
+        // キー入力が優先されるようにする
         lt_f: lt_f {
             compatible = "zmk,behavior-mod-morph";
             label = "LT_F";
             #binding-cells = <0>;
-            bindings = <&lt 3 F>, <&kp F>;
+            bindings = <&tlt 3 F>, <&kp F>;
             mods = <(MOD_LSFT|MOD_LCTL|MOD_LALT|MOD_LGUI)>;
             keep-mods = <(MOD_LSFT|MOD_LCTL|MOD_LALT|MOD_LGUI)>;
         };
@@ -222,7 +233,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "LT_J";
             #binding-cells = <0>;
-            bindings = <&lt 6 J>, <&kp J>;
+            bindings = <&tlt 6 J>, <&kp J>;
             mods = <(MOD_LSFT|MOD_LCTL|MOD_LALT|MOD_LGUI)>;
             keep-mods = <(MOD_LSFT|MOD_LCTL|MOD_LALT|MOD_LGUI)>;
         };
@@ -230,7 +241,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "LT_L";
             #binding-cells = <0>;
-            bindings = <&lt 5 L>, <&kp L>;
+            bindings = <&tlt 5 L>, <&kp L>;
             mods = <(MOD_LSFT|MOD_LCTL|MOD_LALT|MOD_LGUI)>;
             keep-mods = <(MOD_LSFT|MOD_LCTL|MOD_LALT|MOD_LGUI)>;
         };
