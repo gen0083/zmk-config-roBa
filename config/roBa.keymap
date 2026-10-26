@@ -248,7 +248,7 @@
             label = "MOUSE_LAYER_SCROLL";
             bindings = <&mo>, <&kp_exit_AML>;
             #binding-cells = <2>;
-            tapping-term-ms = <100>; // ごく短い長押し判定でクリック
+            tapping-term-ms = <80>;
             flavor = "tap-preferred";
         };
         ml_l: mouse_layer_click_lapid {
@@ -308,8 +308,8 @@
         mouse {
             bindings = <
 &exit_AML  &trans     &trans     &trans     &trans                      &trans  &trans       &trans       &trans                  &trans
-&kp TAB    &trans     &trans     &trans     &trans  &trans      &trans  &trans  &ml_l MB1 J  &ml_c MB2 K  &ml_sc SCROLL_LAYER L   &ml_c MB4 DQT
-&trans     &trans     &trans     &trans     &trans  &trans      &trans  &trans  &trans       &trans       &ml_sc SCROLL_LAYER DOT &ml_c MB5 SLASH
+&kp TAB    &trans     &trans     &trans     &trans  &trans      &trans  &trans  &ml_l MB1 J  &ml_c MB2 K  &ml_sc SCROLL_LAYER L   &ml_l MB4 DQT
+&trans     &trans     &trans     &trans     &trans  &trans      &trans  &trans  &trans       &trans       &ml_sc SCROLL_LAYER DOT &ml_l MB5 SLASH
 &kp LCTRL  &kp LALT   &kp LGUI   &kp LSHIFT &trans  &trans      &trans  &trans                                                    &trans
             >;
         };
